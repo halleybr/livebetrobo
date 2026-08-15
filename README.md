@@ -35,14 +35,16 @@ O GitHub Pages não roda o backend Python, então o site estático usa o
 roda o scanner (`python build.py`), grava o JSON no mesmo formato da rota
 `/api/scanner` e publica tudo em `https://<usuário>.github.io/livebetscanner/`.
 
-* O workflow roda **a cada ~2–3 minutos** (duas expressões cron deslocadas em
-  `:00` e `:02` — o mínimo nativo do GitHub Actions é 5 min *por expressão*),
-  em cada push para `main` e manualmente (aba *Actions* → *Deploy GitHub Pages*
-  → *Run workflow*).
-* **Latência esperada no Pages:** os dados exibidos costumam ter de **~2 a 6
-  minutos** de idade (cron + build + deploy). O frontend mostra essa idade em
-  tempo real no topo ("Última atualização: há X min") e a destaca em laranja
-  quando passa de 10 min.
+* O workflow roda em cada push para `main`, manualmente (aba *Actions* →
+  *Deploy GitHub Pages* → *Run workflow*) e por cron nativo como *backup*
+  (duas expressões deslocadas — **mas o cron do GitHub é best-effort**: pode
+  atrasar minutos ou não disparar; observamos isso em 15/08/2026).
+* **Para atualização confiável a cada ~2 min**, use um agendador externo
+  gratuito (cron-job.org) que chama o `workflow_dispatch` — veja o passo a
+  passo em [`CRON-EXTERNO.md`](CRON-EXTERNO.md).
+* **Latência esperada no Pages:** sem o agendador externo, os dados podem ficar
+  vários minutos velhos. O frontend mostra a idade em tempo real no topo
+  ("Última atualização: há X min") e a destaca em laranja quando passa de 10 min.
 * O frontend consome `api/scanner.json` (com cache-buster `?t=` para o CDN do
   Pages); no servidor local ele cai na API ao vivo (`/api/scanner`) normalmente.
 * **Histórico de entradas:** o registro green/red fica em `data/entries.json` e

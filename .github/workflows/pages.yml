@@ -4,11 +4,10 @@ on:
   push:
     branches: ["main"]
   schedule:
-    # GitHub Actions: mínimo de 5 min POR expressão cron. Duas expressões
-    # deslocadas (minuto 0 e minuto 2) se combinam e disparam em :00/:02/:05/:07/...
-    # — ou seja, a cada ~2-3 minutos (o mais próximo de "2 min" que o
-    # agendamento nativo permite). Também evita os picos de fila das viradas
-    # de hora e meia-hora.
+    # Cron nativo = BACKUP (best-effort): o GitHub pode atrasar ou não disparar
+    # execuções agendadas. Para ritmo confiável de ~2 min, use o agendador
+    # externo (cron-job.org → workflow_dispatch) descrito em CRON-EXTERNO.md.
+    # Duas expressões deslocadas (:00 e :02) para o caso de o agendamento funcionar.
     - cron: "*/5 * * * *"
     - cron: "2-59/5 * * * *"
   workflow_dispatch:
