@@ -151,3 +151,37 @@ def extract_live_matches(payload: Optional[dict]) -> list[dict]:
                 }
             )
     return matches
+
+
+def extract_finished_matches(payload: Optional[dict]) -> list[dict]:
+    """Normaliza as partidas já encerradas do payload de /events/today.
+
+    Usado para liquidar as entradas recomendadas (green/red): o payload do
+    RoboBet mantém os jogos do dia com `status == "finished"` e o placar
+    final, mesmo depois que a partida sai da lista de ao vivo.
+    """
+    if not payload or not isinstance(payload.get("leagues"), list):
+        return []
+
+    finished: list[dict] = []
+    for league in payload["leagues"]:
+        league_name = league.get("name") or "N/D"
+        for m in league.get("matches", []):
+            if m.get("isLive"):
+                continue
+            if not (m.get("isFinished") or m.get("status") in ("finished", "FT", "END")):
+                continue
+            finished.append(
+                {
+                    "id": m.get("id"),
+                    "league": league_name,
+                    "home": m.get("home"),
+                    "away": m.get("away"),
+                    "home_score": m.get("scoreHome"),
+                    "away_score": m.get("scoreAway"),
+                    "status": m.get("status"),
+                    "time_label": m.get("time"),
+                    "finished_at": datetime.now(timezone.utc).isoformat(),
+                }
+            )
+    return finished

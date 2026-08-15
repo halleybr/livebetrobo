@@ -197,6 +197,66 @@ function detectAlerts(opportunities) {
   state.prev = now;
 }
 
+/* ---------- Possíveis entradas ---------- */
+
+const ENTRIES_DISPLAY_HOURS = 24;
+const ENTRIES_MAX = 60;
+
+function entryStatusBadge(e) {
+  const map = {
+    ativa: '<span class="entry-status st-live">⏳ ATIVA</span>',
+    green: '<span class="entry-status st-green">🟢 GREEN</span>',
+    red: '<span class="entry-status st-red">🔴 RED</span>',
+    n_d: '<span class="entry-status st-nd">⚪ SEM DADO</span>',
+  };
+  return map[e.status] || `<span class="entry-status">${escapeHtml(e.status)}</span>`;
+}
+
+function entryHtml(e) {
+  const market = e.market || e.corner_market || "—";
+  const odd = e.odd != null ? `@ ${fmtNum(e.odd)}` : "";
+  const prob = e.prob != null ? ` · ${fmtInt(e.prob)}%` : "";
+  const finalScore = e.final_score ? ` · final ${escapeHtml(e.final_score)}` : "";
+  const minute = e.minute_at_entry != null ? ` ${e.minute_at_entry}'` : "";
+  return `
+  <div class="entry-row" data-id="${escapeHtml(e.id)}">
+    <div class="entry-main">
+      <span class="entry-teams">${escapeHtml(e.home)} x ${escapeHtml(e.away)}</span>
+      <span class="entry-league">${escapeHtml(e.league || "")}</span>
+    </div>
+    <div class="entry-detail">
+      <span class="entry-market">${escapeHtml(market)}</span>
+      <span class="entry-odd">${odd}${prob}</span>
+      <span class="entry-meta">LPS ${Math.round(e.lps_at_entry ?? 0)}${minute} · entrou ${fmtTime(e.entered_at)}${finalScore}</span>
+    </div>
+    ${entryStatusBadge(e)}
+  </div>`;
+}
+
+function renderEntries(entries) {
+  const section = $("entries-section");
+  const list = $("entries-list");
+  if (!entries || !entries.length) {
+    section.classList.add("hidden");
+    list.innerHTML = "";
+    return;
+  }
+  const cutoff = Date.now() - ENTRIES_DISPLAY_HOURS * 3600 * 1000;
+  const recent = entries
+    .filter((e) => e.entered_at && new Date(e.entered_at).getTime() >= cutoff)
+    .slice(0, ENTRIES_MAX);
+  if (!recent.length) {
+    section.classList.add("hidden");
+    list.innerHTML = "";
+    return;
+  }
+  const green = recent.filter((e) => e.status === "green").length;
+  const red = recent.filter((e) => e.status === "red").length;
+  $("entries-summary").textContent = `${recent.length} entradas · 🟢 ${green} · 🔴 ${red}`;
+  list.innerHTML = recent.map(entryHtml).join("");
+  section.classList.remove("hidden");
+}
+
 /* ---------- Render principal ---------- */
 
 function renderSources(sources) {
@@ -232,14 +292,14 @@ function render(data) {
   renderAge();
 
   renderSources(sources);
+  renderEntries(data.entries);
 
   const cardsEl = $("cards");
   if (!opportunities || !opportunities.length) {
     cardsEl.innerHTML = `<div class="empty"><p>😴 <strong>SEM ENTRADA</strong></p><p>Nenhuma partida ao vivo atingiu o LIVE PRESSURE SCORE mínimo (${data.min_lps ?? 70}) agora. O radar continua monitorando ${summary?.monitored ?? 0} jogos.</p></div>`;
-    return;
+  } else {
+    cardsEl.innerHTML = opportunities.map(cardHtml).join("");
   }
-
-  cardsEl.innerHTML = opportunities.map(cardHtml).join("");
   if (data.config) state.refreshMs = (data.config.poll_seconds || 30) * 1000;
 }
 

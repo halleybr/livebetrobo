@@ -25,11 +25,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from scanner import robobet, sokkerpro
+from scanner.entries import EntryTracker
 from scanner.scorer import classify
 from server import _enrich_one  # reutiliza o casamento/enriquecimento do servidor
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "api" / "scanner.json"
+ENTRIES_FILE = ROOT / "data" / "entries.json"  # histórico green/red (commitado pelo workflow)
 
 MIN_LPS = float(os.environ.get("MIN_LPS", "70"))
 TOP_N = int(os.environ.get("TOP_N", "10"))
@@ -80,6 +82,14 @@ def main() -> None:
     scored.sort(key=lambda m: m["lps"], reverse=True)
     opportunities = [m for m in scored if m["lps"] >= MIN_LPS][:TOP_N]
 
+    # 3b) Registro de entradas (histórico green/red). Carrega o ledger que o
+    #     workflow commitou no run anterior, evolui e salva de volta — assim o
+    #     histórico sobrevive entre os builds do GitHub Pages.
+    finished = robobet.extract_finished_matches(payload) if payload is not None else []
+    tracker = EntryTracker(ENTRIES_FILE, MIN_LPS)
+    tracker.observe(opportunities, finished)
+    tracker.save()
+
     data = {
         "summary": {
             "monitored": len(scored),
@@ -88,6 +98,7 @@ def main() -> None:
         },
         "sources": sources,
         "opportunities": opportunities,
+        "entries": tracker.snapshot(),
         "live_count": len(scored),
         "min_lps": MIN_LPS,
         "config": {

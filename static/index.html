@@ -30,6 +30,11 @@
       </div>
     </section>
 
+    <section id="entries-section" class="entries-section hidden">
+      <h2>📋 Possíveis entradas <span id="entries-summary" class="entries-summary"></span></h2>
+      <div id="entries-list" class="entries-list"></div>
+    </section>
+
     <section class="info">
       <h2>Como o Live Pressure Score funciona</h2>
       <p>
@@ -46,10 +51,16 @@
       </p>
       <p>
         ⏱️ <strong>Atualização dos dados:</strong> no GitHub Pages o JSON é gerado pelo
-        GitHub Actions <strong>a cada 5 minutos</strong> (intervalo mínimo da plataforma), então
-        os dados podem ter de <strong>5 a 10 minutos</strong> de idade — a idade aparece no topo,
-        em <em>Última atualização</em>. Rodando localmente (<code>python server.py</code>),
+        GitHub Actions a cada <strong>~2 a 3 minutos</strong> (duas agendas de cron deslocadas,
+        o mínimo da plataforma é 5 min por agenda) — a idade aparece no topo, em
+        <em>Última atualização</em>. Rodando localmente (<code>python server.py</code>),
         os dados atualizam a cada 30 segundos.
+      </p>
+      <p>
+        📋 <strong>Possíveis entradas:</strong> toda dica recomendada pelo radar fica registrada
+        abaixo, mesmo depois que a pressão cai. Quando o jogo termina, a dica é avaliada com o
+        placar final: <strong>🟢 GREEN</strong> se deu certo, <strong>🔴 RED</strong> se deu errado
+        (dicas de escanteios ficam <strong>SEM DADO</strong>, pois não há escanteio final na fonte pública).
       </p>
       <p class="disclaimer">
         <strong>⚠️ Aviso:</strong> “possível entrada” é uma indicação estatística, não garantia de resultado.

@@ -35,6 +35,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from scanner import robobet, sokkerpro
+from scanner.entries import EntryTracker
 from scanner.scorer import classify
 
 logging.basicConfig(
@@ -59,15 +60,19 @@ TOP_N = _env_int("TOP_N", 10)
 MIN_LPS = float(os.environ.get("MIN_LPS", "70"))
 
 STATIC_DIR = Path(__file__).parent / "static"
+ENTRIES_FILE = Path(__file__).parent / "data" / "entries.json"
 
 # ---------------------------------------------------------------------------
 # Estado compartilhado
 # ---------------------------------------------------------------------------
 
 _state_lock = threading.Lock()
+_tracker = EntryTracker(ENTRIES_FILE, MIN_LPS)
+
 _state: dict = {
     "live_matches": [],       # todas as partidas ao vivo (com score calculado)
     "opportunities": [],      # filtradas (LPS >= MIN_LPS, ordenadas, TOP_N)
+    "entries": [],            # entradas recomendadas (histórico green/red)
     "summary": {
         "monitored": 0,
         "opportunities": 0,
@@ -147,9 +152,13 @@ def _robobet_poll_loop() -> None:
                 opportunities = [
                     m for m in scored if m["lps"] >= MIN_LPS
                 ][:TOP_N]
+                finished = robobet.extract_finished_matches(payload)
+                _tracker.observe(opportunities, finished)
+                _tracker.save()
                 _set_state(
                     live_matches=scored,
                     opportunities=opportunities,
+                    entries=_tracker.snapshot(),
                     summary={
                         "monitored": len(scored),
                         "opportunities": len(opportunities),
@@ -310,6 +319,7 @@ class Handler(BaseHTTPRequestHandler):
                     "summary": dict(_state["summary"]),
                     "sources": dict(_state["sources"]),
                     "opportunities": _state["opportunities"],
+                    "entries": _state.get("entries", []),
                     "live_count": len(_state["live_matches"]),
                     "min_lps": MIN_LPS,
                     "config": {

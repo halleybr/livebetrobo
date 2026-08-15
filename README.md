@@ -35,15 +35,36 @@ O GitHub Pages não roda o backend Python, então o site estático usa o
 roda o scanner (`python build.py`), grava o JSON no mesmo formato da rota
 `/api/scanner` e publica tudo em `https://<usuário>.github.io/livebetscanner/`.
 
-* O workflow roda **a cada 5 minutos** (mínimo do GitHub Actions; agendado em
-  `:02/:07/…` para evitar filas nas viradas de hora), em cada push para `main`
-  e manualmente (aba *Actions* → *Deploy GitHub Pages* → *Run workflow*).
-* **Latência esperada no Pages:** por causa do intervalo mínimo do Actions e do
-  tempo de build/deploy, os dados exibidos costumam ter de **~5 a 10 minutos**
-  de idade. O frontend mostra essa idade em tempo real no topo
-  ("Última atualização: há X min") e a destaca em laranja quando passa de 10 min.
+* O workflow roda **a cada ~2–3 minutos** (duas expressões cron deslocadas em
+  `:00` e `:02` — o mínimo nativo do GitHub Actions é 5 min *por expressão*),
+  em cada push para `main` e manualmente (aba *Actions* → *Deploy GitHub Pages*
+  → *Run workflow*).
+* **Latência esperada no Pages:** os dados exibidos costumam ter de **~2 a 6
+  minutos** de idade (cron + build + deploy). O frontend mostra essa idade em
+  tempo real no topo ("Última atualização: há X min") e a destaca em laranja
+  quando passa de 10 min.
 * O frontend consome `api/scanner.json` (com cache-buster `?t=` para o CDN do
   Pages); no servidor local ele cai na API ao vivo (`/api/scanner`) normalmente.
+* **Histórico de entradas:** o registro green/red fica em `data/entries.json` e
+  é commitado de volta ao repositório pelo próprio workflow a cada execução
+  (permissão `contents: write`), para sobreviver entre os builds do Pages.
+
+## 📋 Possíveis entradas (histórico green/red)
+
+Toda **dica recomendada** pelo radar (partida que entrou na lista de
+oportunidades, LPS ≥ mínimo, com mercado ativo) é registrada na seção
+"Possíveis entradas" do site. O registro **não é apagado** quando a pressão cai:
+
+* ⏳ **ATIVA** — o jogo ainda está rolando (ou a dica ainda não deu resultado).
+* 🟢 **GREEN** — o jogo terminou e a dica deu certo (placar final confirma).
+* 🔴 **RED** — o jogo terminou e a dica deu errado.
+* ⚪ **SEM DADO** — jogo terminou, mas não dá para avaliar (ex.: escanteios,
+  pois a fonte pública não expõe escanteio final).
+
+Avaliação com o placar final do RoboBet (`status == finished`): **Over 0.5 gol**
+→ green se total ≥ 1; **Over 1.5 gols** → green se total ≥ 2; **Próximo gol**
+→ green se houve gol depois da entrada. O histórico mostrado cobre as últimas
+**24 horas** (o ledger guarda 48h).
 * Se a fonte externa falhar no momento da geração, o site continua no ar e
   mostra o status de erro na barra de fontes (nada quebra).
 
