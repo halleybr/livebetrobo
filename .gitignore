@@ -1,0 +1,13 @@
+# Logs locais
+server.log
+
+# Estado do agente (Freebuff)
+.freebuff/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Dados gerados localmente (o GitHub Actions regera a cada build)
+api/
+_site/

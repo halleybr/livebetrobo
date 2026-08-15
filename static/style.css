@@ -1,0 +1,182 @@
+:root {
+  --bg: #0b0f14;
+  --bg-card: #131a23;
+  --bg-card-hover: #17212d;
+  --border: #223041;
+  --text: #e8eef5;
+  --text-dim: #8ba1b8;
+  --accent: #ffb020;
+  --green: #2ecc71;
+  --yellow: #f1c40f;
+  --orange: #e67e22;
+  --red: #e74c3c;
+  --blue: #3498db;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  line-height: 1.45;
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- Topo ---------- */
+.topbar {
+  background: linear-gradient(180deg, #10161f 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 22px 0 18px;
+}
+.topbar h1 { font-size: 26px; letter-spacing: 0.5px; }
+.tagline { color: var(--text-dim); font-size: 14px; margin-top: 4px; }
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+.stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 14px;
+  min-width: 130px;
+}
+.stat-label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); }
+.stat-value { display: block; font-size: 18px; font-weight: 700; margin-top: 2px; }
+
+/* ---------- Alertas ---------- */
+.alerts { margin: 14px 0; }
+.alert {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  animation: fadein 0.4s ease;
+}
+.alert .time { color: var(--text-dim); font-size: 12px; white-space: nowrap; }
+.alert .msg { flex: 1; }
+@keyframes fadein { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; } }
+
+.hidden { display: none; }
+
+/* ---------- Status da fonte ---------- */
+.source-status { margin: 10px 0 6px; font-size: 13px; color: var(--text-dim); }
+.source-status .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 12px; margin-right: 6px; }
+.badge-ok { background: rgba(46, 204, 113, 0.15); color: var(--green); border: 1px solid rgba(46,204,113,0.4); }
+.badge-warn { background: rgba(230, 126, 34, 0.15); color: var(--orange); border: 1px solid rgba(230,126,34,0.4); }
+.badge-err { background: rgba(231, 76, 60, 0.15); color: var(--red); border: 1px solid rgba(231,76,60,0.4); }
+
+/* ---------- Cards ---------- */
+.cards { display: grid; gap: 14px; margin-top: 8px; }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.card:hover { background: var(--bg-card-hover); }
+.card.hot { border-color: rgba(255, 176, 32, 0.7); box-shadow: 0 0 0 1px rgba(255,176,32,0.25), 0 4px 24px rgba(255,176,32,0.08); }
+
+.card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.league { color: var(--text-dim); font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; }
+
+.teams { margin: 8px 0 4px; font-size: 19px; font-weight: 700; }
+.teams .score { color: var(--accent); padding: 0 6px; font-variant-numeric: tabular-nums; }
+.minute { font-size: 13px; color: var(--text-dim); }
+
+.lps-box { text-align: center; min-width: 84px; }
+.lps-value { font-size: 34px; font-weight: 800; line-height: 1; }
+.lps-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.6px; margin-top: 4px; }
+
+.tier-muito_forte .lps-value { color: var(--green); }
+.tier-interessante .lps-value { color: var(--yellow); }
+.tier-observar .lps-value { color: var(--orange); }
+.tier-ignorar .lps-value { color: var(--red); }
+
+.entry {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background: rgba(46, 204, 113, 0.12);
+  border: 1px solid rgba(46, 204, 113, 0.45);
+  color: var(--green);
+}
+.entry.corners { background: rgba(52, 152, 219, 0.12); border-color: rgba(52,152,219,0.45); color: var(--blue); }
+.entry.both { background: rgba(241, 196, 15, 0.12); border-color: rgba(241,196,15,0.45); color: var(--yellow); }
+.entry.none { background: rgba(139, 161, 184, 0.1); border-color: rgba(139,161,184,0.35); color: var(--text-dim); }
+
+.confidence { margin-left: 8px; font-size: 13px; color: var(--text-dim); }
+.confidence strong.alta { color: var(--green); }
+.confidence strong.media { color: var(--yellow); }
+.confidence strong.baixa { color: var(--orange); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+.cell {
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+.cell .k { display: block; font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+.cell .v { display: block; font-size: 15px; font-weight: 700; margin-top: 1px; }
+.cell .v.nd { color: var(--text-dim); font-weight: 400; }
+
+.foot {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.basis { font-size: 11px; padding: 2px 8px; border-radius: 12px; background: rgba(52,152,219,0.12); color: var(--blue); }
+
+.empty { text-align: center; padding: 60px 20px; color: var(--text-dim); }
+.empty strong { color: var(--text); }
+
+/* ---------- Info ---------- */
+.info {
+  margin: 26px 0 40px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 13.5px;
+  color: var(--text-dim);
+}
+.info h2 { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+.info p { margin-bottom: 8px; }
+.info .disclaimer { border-top: 1px solid var(--border); padding-top: 10px; color: var(--orange); }
+
+@media (max-width: 560px) {
+  .topbar h1 { font-size: 21px; }
+  .teams { font-size: 17px; }
+  .lps-value { font-size: 28px; }
+  .card-head { flex-direction: column; }
+  .lps-box { align-self: flex-end; }
+}
