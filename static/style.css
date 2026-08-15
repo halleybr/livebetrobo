@@ -48,6 +48,7 @@ body {
 }
 .stat-label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); }
 .stat-value { display: block; font-size: 18px; font-weight: 700; margin-top: 2px; }
+.stat-value.stale { color: var(--orange); }
 
 /* ---------- Alertas ---------- */
 .alerts { margin: 14px 0; }

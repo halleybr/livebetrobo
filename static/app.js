@@ -2,6 +2,9 @@
 
 const REFRESH_MS = 30000; // fallback; o servidor informa o intervalo real
 const ALERT_LIMIT = 8;
+// No GitHub Pages o JSON é gerado pelo GitHub Actions a cada 5 min; acima deste
+// tempo a idade dos dados é destacada no topo (o deploy pode levar alguns min).
+const STALE_AFTER_MS = 10 * 60 * 1000;
 
 const state = {
   prev: new Map(),   // id -> snapshot anterior (para detecção de alertas)
@@ -120,6 +123,31 @@ function escapeHtml(s) {
   }[c]));
 }
 
+/* ---------- Idade dos dados ---------- */
+
+let lastUpdatedAt = null;
+
+function fmtAge(iso) {
+  if (!iso) return "—";
+  const ageMs = Date.now() - new Date(iso).getTime();
+  if (!(ageMs >= 0)) return "agora";
+  const s = Math.floor(ageMs / 1000);
+  if (s < 60) return "há <1 min";
+  const m = Math.floor(s / 60);
+  if (m < 60) return `há ${m} min`;
+  const h = Math.floor(m / 60);
+  return `há ${h}h ${m % 60}min`;
+}
+
+function renderAge() {
+  const el = $("stat-updated");
+  if (!el || !lastUpdatedAt) return;
+  el.textContent = fmtAge(lastUpdatedAt);
+  el.title = `Gerado às ${fmtTime(lastUpdatedAt)}`;
+  const stale = Date.now() - new Date(lastUpdatedAt).getTime() > STALE_AFTER_MS;
+  el.classList.toggle("stale", stale);
+}
+
 /* ---------- Alertas ---------- */
 
 function pushAlert(msg) {
@@ -200,7 +228,8 @@ function render(data) {
   const { summary, opportunities, sources } = data;
   $("stat-monitored").textContent = summary?.monitored ?? "—";
   $("stat-opportunities").textContent = summary?.opportunities ?? "—";
-  $("stat-updated").textContent = fmtTime(summary?.updated_at);
+  lastUpdatedAt = summary?.updated_at ?? null;
+  renderAge();
 
   renderSources(sources);
 
@@ -218,7 +247,10 @@ async function fetchScanner() {
   // No GitHub Pages não existe o backend Python: consumimos o JSON estático
   // gerado pelo GitHub Actions (api/scanner.json). No servidor local,
   // caímos na API ao vivo (/api/scanner).
-  const urls = ["api/scanner.json", "/api/scanner"];
+  // O GitHub Pages (CDN) serve scanner.json com cache de 10 min; o sufixo ?t=
+  // força uma busca nova a cada poll e garante que o arquivo recém-deployado
+  // apareça assim que o GitHub Actions termina (no servidor local é inofensivo).
+  const urls = [`api/scanner.json?t=${Date.now()}`, "/api/scanner"];
   let lastErr = null;
   for (const url of urls) {
     try {
@@ -236,9 +268,14 @@ async function fetchScanner() {
   console.error(lastErr);
 }
 
-function loop() {
-  fetchScanner();
-  setInterval(fetchScanner, state.refreshMs);
+async function loop() {
+  await fetchScanner();
+  // setTimeout recursivo: relê state.refreshMs (o servidor/JSON informa o
+  // intervalo real) em vez de congelar o valor inicial como fazia o setInterval.
+  setTimeout(loop, Math.max(5000, state.refreshMs));
 }
+
+// Tic-tac da idade dos dados (o texto "há X min" envelhece entre os polls).
+setInterval(renderAge, 15000);
 
 loop();

@@ -92,8 +92,9 @@ def main() -> None:
         "min_lps": MIN_LPS,
         "config": {
             # No Pages o JSON só muda a cada execução do workflow (a cada 5 min);
-            # o frontend consulta a cada 60 s para pegar atualizações novas.
-            "poll_seconds": 60,
+            # o frontend consulta a cada 30 s para pegar atualizações novas assim
+            # que o deploy termina.
+            "poll_seconds": 30,
             "enrich_seconds": 300,
             "stats_enabled": True,
             "stats_provider": "sokkerpro",

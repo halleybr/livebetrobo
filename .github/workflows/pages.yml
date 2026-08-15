@@ -5,7 +5,9 @@ on:
     branches: ["main"]
   schedule:
     # GitHub Actions: intervalo mínimo de 5 min.
-    - cron: "*/5 * * * *"
+    # Deslocado para :02/:07/... para evitar os picos de fila no início de cada
+    # hora e meia-hora (atrasos documentados pelo GitHub em horários de carga).
+    - cron: "2-57/5 * * * *"
   workflow_dispatch:
 
 permissions:
