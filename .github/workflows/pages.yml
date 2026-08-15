@@ -37,8 +37,9 @@ jobs:
       - name: Assemble static site
         run: |
           rm -rf _site
-          mkdir -p _site/api
-          cp -r static/* _site/
+          mkdir -p _site/static _site/api
+          cp static/index.html _site/index.html
+          cp static/style.css static/app.js _site/static/
           cp api/scanner.json _site/api/scanner.json
 
       - name: Upload Pages artifact
