@@ -14,7 +14,9 @@ Este repositório é **público**, então os minutos do Actions usados são grat
 
 1. GitHub → avatar → **Settings** → **Developer settings** → **Fine-grained
    tokens** → **Generate new token**.
-2. **Repository access:** *Only select repositories* → `halleybr/livebetscanner`.
+2. **Repository access:** *Only select repositories* → `halleybr/livebetrobo`.
+   (Se você ainda mantém o job antigo do `livebetscanner`, marque os dois
+   repositórios — o token precisa cobrir o repo de cada URL de dispatch.)
 3. **Permissions → Repository permissions → Actions:** *Read and write*.
 4. Copie o token (ele só aparece uma vez).
 
@@ -27,7 +29,7 @@ Este repositório é **público**, então os minutos do Actions usados são grat
 2. **Create cronjob** com:
    - **URL:**
      ```
-     https://api.github.com/repos/halleybr/livebetscanner/actions/workflows/pages.yml/dispatches
+     https://api.github.com/repos/halleybr/livebetrobo/actions/workflows/pages.yml/dispatches
      ```
    - **Request method:** `POST`
    - **Custom headers:**
@@ -58,3 +60,18 @@ frontend (que consulta a cada 30 s) mostra os dados novos quase em seguida.
 > O cron nativo do workflow continua configurado como *backup* (best-effort) —
 > ele pode atrasar ou não rodar, mas não atrapalha. O agendador externo é o que
 > garante o ritmo.
+
+## Se o site ainda demorar — verifique isto
+
+* **O job do cron-job.org aponta para o repo certo?** Se a URL ainda for a do
+  repositório antigo (`livebetscanner`), o `livebetrobo` não recebe disparos —
+  o site só atualiza quando alguém faz `push` ou dispara o workflow à mão.
+* **O token cobre o `livebetrobo` com permissão *Actions: Read and write*?**
+  Sem isso o POST retorna 403 (e o cron-job.org marca o job como erro).
+* **Como conferir que está funcionando:** em
+  https://github.com/halleybr/livebetrobo/actions devem aparecer runs com o
+  evento `workflow_dispatch` a cada 2 minutos. Se aparecem só quando você
+  clica em *Run workflow*, é o agendador externo que não está disparando.
+* **Tempo medido neste projeto:** o run de `workflow_dispatch` completo leva
+  ~20 s (build + deploy) e os dados novos aparecem no site em ~1 min. A demora
+  que se vê hoje vem da falta de disparo, não do workflow em si.

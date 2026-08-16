@@ -32,7 +32,7 @@ Exemplo: `MIN_LPS=60 python server.py` (mostra também jogos "OBSERVAR").
 O GitHub Pages não roda o backend Python, então o site estático usa o
 **GitHub Actions** para gerar os dados: o workflow `.github/workflows/pages.yml`
 roda o scanner (`python build.py`), grava o JSON no mesmo formato da rota
-`/api/scanner` e publica tudo em `https://<usuário>.github.io/livebetscanner/`.
+`/api/scanner` e publica tudo em `https://<usuário>.github.io/livebetrobo/`.
 
 * O workflow roda em cada push para `main`, manualmente (aba *Actions* →
   *Deploy GitHub Pages* → *Run workflow*) e por cron nativo como *backup*
