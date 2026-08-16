@@ -2,9 +2,9 @@
 """Gera `api/scanner.json` — modo estático para o GitHub Pages.
 
 O GitHub Pages não roda o servidor Python (`server.py`). Este script executa
-um ciclo completo (poll RoboBet + enriquecimento SokkerPRO + LIVE PRESSURE
-SCORE) e grava um JSON com o MESMO formato da rota `/api/scanner`, para o
-GitHub Actions gerar periodicamente e publicar como site estático.
+um ciclo completo (poll RoboBet + LIVE PRESSURE SCORE) e grava um JSON com o
+MESMO formato da rota `/api/scanner`, para o GitHub Actions gerar
+periodicamente e publicar como site estático.
 
 O frontend tenta primeiro `api/scanner.json` e, se não existir (servidor
 local), cai na API ao vivo `/api/scanner`.
@@ -24,10 +24,9 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 
-from scanner import robobet, sokkerpro
+from scanner import robobet
 from scanner.entries import EntryTracker
 from scanner.scorer import classify
-from server import _enrich_one  # reutiliza o casamento/enriquecimento do servidor
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "api" / "scanner.json"
@@ -44,8 +43,6 @@ def _now_iso() -> str:
 def main() -> None:
     sources = {
         "robobet": "error",
-        "stats": "unknown",
-        "provider": "sokkerpro",
         "last_error": None,
     }
 
@@ -59,26 +56,8 @@ def main() -> None:
         print("RoboBet: falha na atualização")
     else:
         sources["robobet"] = "ok"
-        # 2) Enriquecimento SokkerPRO (uma única chamada, como no servidor).
-        try:
-            fixtures = sokkerpro.fetch_livescores()
-            if fixtures is None:
-                sources["stats"] = "error"
-                sources["last_error"] = "Falha ao buscar estatísticas do SokkerPRO (N/D)"
-                print("SokkerPRO: falha na atualização")
-            else:
-                enriched = 0
-                for m in scored:
-                    if _enrich_one(m, fixtures):
-                        enriched += 1
-                sources["stats"] = "ok"
-                print(f"SokkerPRO: {enriched} partidas enriquecidas")
-        except Exception as exc:  # noqa: BLE001
-            sources["stats"] = "error"
-            sources["last_error"] = str(exc)[:300]
-            print(f"SokkerPRO: erro no enriquecimento: {exc}")
 
-    # 3) Ordena e filtra (idêntico à rota /api/scanner).
+    # 2) Ordena e filtra (idêntico à rota /api/scanner).
     scored.sort(key=lambda m: m["lps"], reverse=True)
     opportunities = [m for m in scored if m["lps"] >= MIN_LPS][:TOP_N]
 
@@ -106,9 +85,6 @@ def main() -> None:
             # o frontend consulta a cada 30 s para pegar atualizações novas assim
             # que o deploy termina.
             "poll_seconds": 30,
-            "enrich_seconds": 300,
-            "stats_enabled": True,
-            "stats_provider": "sokkerpro",
             "top_n": TOP_N,
         },
         "generated_at": _now_iso(),

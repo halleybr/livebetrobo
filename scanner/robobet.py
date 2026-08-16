@@ -130,23 +130,7 @@ def extract_live_matches(payload: Optional[dict]) -> list[dict]:
                     "suggestion_label": suggestion.get("abbreviation"),
                     "suggestion_prob": _num(suggestion.get("probability")),
                     "suggestion_odd": suggestion.get("odd"),
-                    # ---- Estatísticas ao vivo (preenchidas pelo SokkerPRO; None = N/D)
-                    "xg_home": None,
-                    "xg_away": None,
-                    "shots": None,
-                    "shots_on_target": None,
-                    "dangerous_attacks": None,
-                    "possession_home": None,
-                    "corners": None,
-                    "big_chances": None,
-                    "fouls": None,
-                    "yellow_cards": None,
-                    "red_cards": None,
-                    "blocked_shots": None,
-                    "crosses": None,
-                    "stats_updated_at": None,
                     # ---- Diagnóstico
-                    "stats_source": "robobet",
                     "fetched_at": datetime.now(timezone.utc).isoformat(),
                 }
             )

@@ -37,12 +37,6 @@ function fmtInt(v) {
   return Number(v).toLocaleString("pt-BR", { maximumFractionDigits: 0 });
 }
 
-function pressureBar(m) {
-  const bars = [m.pressure_bar_home, m.pressure_bar_away].filter((v) => v !== null && v !== undefined);
-  if (!bars.length) return "N/D";
-  return fmtInt(bars.reduce((a, b) => a + b, 0) / bars.length);
-}
-
 function tierLabel(tier) {
   return {
     muito_forte: "🟢 OPORTUNIDADE MUITO FORTE",
@@ -76,11 +70,9 @@ function confidenceHtml(m) {
 
 function cardHtml(m) {
   const hot = m.lps >= 80 ? "hot" : "";
-  const xgTot =
-    m.xg_home !== null && m.xg_away !== null
-      ? fmtNum(m.xg_home + m.xg_away)
-      : "N/D";
   const minuteLabel = m.time_label || `${m.minute || "?"}'`;
+  // Janela de 10 min mais próxima (mesma regra do scorer: 25'-59' -> h1, 60'+ -> h2).
+  const cornerWindow = m.minute >= 60 ? m.corners_next10_h2 : m.minute >= 25 ? m.corners_next10_h1 : null;
 
   return `
   <article class="card ${hot}" data-id="${m.id}">
@@ -100,19 +92,16 @@ function cardHtml(m) {
       </div>
     </div>
     <div class="stats-grid">
-      <div class="cell"><span class="k">xG</span><span class="v ${xgTot === "N/D" ? "nd" : ""}">${xgTot}</span></div>
-      <div class="cell"><span class="k">Finalizações</span><span class="v ${m.shots === null ? "nd" : ""}">${fmtInt(m.shots)}</span></div>
-      <div class="cell"><span class="k">No alvo</span><span class="v ${m.shots_on_target === null ? "nd" : ""}">${fmtInt(m.shots_on_target)}</span></div>
-      <div class="cell"><span class="k">Ataq. perigosos</span><span class="v ${m.dangerous_attacks === null ? "nd" : ""}">${fmtInt(m.dangerous_attacks)}</span></div>
-      <div class="cell"><span class="k">Escanteios</span><span class="v ${m.corners === null ? "nd" : ""}">${fmtInt(m.corners)}</span></div>
       <div class="cell"><span class="k">Esc. esperados (modelo)</span><span class="v">${fmtNum(m.corners_expected_total)}</span></div>
-      <div class="cell"><span class="k">Pressão 🔥</span><span class="v">${pressureBar(m)}</span></div>
+      <div class="cell"><span class="k">Esc. 10 min (modelo)</span><span class="v">${cornerWindow === null ? "N/D" : fmtInt(cornerWindow) + "%"}</span></div>
       <div class="cell"><span class="k">Prob. +1.5 gol (modelo)</span><span class="v">${m.prob_over15_ft === null ? "N/D" : fmtInt(m.prob_over15_ft) + "%"}</span></div>
+      <div class="cell"><span class="k">Over 2.5 (modelo)</span><span class="v">${m.prob_over25_ft === null ? "N/D" : fmtInt(m.prob_over25_ft) + "%"}</span></div>
       <div class="cell"><span class="k">BTTS (modelo)</span><span class="v">${m.prob_btts === null ? "N/D" : fmtInt(m.prob_btts) + "%"}</span></div>
+      <div class="cell"><span class="k">Sugestão</span><span class="v">${m.suggestion_market ? `${escapeHtml(m.suggestion_label || m.suggestion_market)} ${m.suggestion_prob === null ? "" : fmtInt(m.suggestion_prob) + "%"}`.trim() : "N/D"}</span></div>
     </div>
     <div class="foot">
       <span>${tierLabel(m.tier)} · dados: ${m.data_availability >= 0.7 ? "completos" : "parciais"}</span>
-      <span class="basis">fonte: ${m.basis === "robobet+sokkerpro" ? "RoboBet + SokkerPRO" : "RoboBet"}</span>
+      <span class="basis">fonte: RoboBet</span>
     </div>
   </article>`;
 }
@@ -262,22 +251,12 @@ function renderEntries(entries) {
 function renderSources(sources) {
   const el = $("source-status");
   if (!sources) { el.innerHTML = ""; return; }
-  const provider = (sources.provider || "SokkerPRO").toUpperCase();
   const parts = [];
   parts.push(
     sources.robobet === "ok"
       ? '<span class="badge badge-ok">RoboBet: OK</span>'
       : '<span class="badge badge-err">RoboBet: erro</span>'
   );
-  if (sources.stats === "disabled") {
-    parts.push(`<span class="badge badge-warn">${provider}: desligado</span>`);
-  } else if (sources.stats === "error") {
-    parts.push(`<span class="badge badge-warn">${provider}: indisponível (estatísticas = N/D)</span>`);
-  } else if (sources.stats === "ok") {
-    parts.push(`<span class="badge badge-ok">${provider}: OK</span>`);
-  } else {
-    parts.push(`<span class="badge badge-warn">${provider}: aguardando…</span>`);
-  }
   if (sources.last_error) {
     parts.push(`<span>${escapeHtml(sources.last_error)}</span>`);
   }

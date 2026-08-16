@@ -4,9 +4,7 @@ O score é calculado SOMENTE com dados reais disponíveis:
 
   * probabilidades do modelo RoboBet (over_05/15/25, BTTS, escanteios);
   * ritmo da partida (gols por minuto projetados);
-  * bandeiras de momentum ao vivo (hasFire, hasBall, justScored, cartões);
-  * estatísticas ao vivo do SokkerPRO quando acessíveis (xG, chutes, ataques
-    perigosos, escanteios reais, barra de pressão, ataques por minuto).
+  * bandeiras de momentum ao vivo (hasFire, hasBall, justScored, cartões).
 
 Estrutura do score:
   * goals_component  (0–100): potencial de gols no restante da partida;
@@ -110,11 +108,10 @@ def _corner_window_prob(m: dict) -> Optional[float]:
 
 
 def _blend(model_score: float, model_avail: float, live_signals: list, total_w: float) -> tuple[float, float]:
-    """Combina o score do modelo RoboBet com estatísticas ao vivo (SokkerPRO).
+    """Combina o score do modelo RoboBet com sinais ao vivo (quando existirem).
 
-    Quando as estatísticas ao vivo estão disponíveis, elas têm peso
-    STATS_BLEND — xG, chutes e ataques perigosos são a evidência mais forte
-    de pressão.
+    Sinais ao vivo entram com peso STATS_BLEND; sem eles, o score é
+    ​​exclusivamente o do modelo.
     """
     if live_signals:
         live_score, live_used = _weighted(live_signals)
@@ -268,12 +265,11 @@ def live_pressure_score(m: dict) -> dict:
     balance = low / dom if dom > 0 else 0.0
     lps = dom * (0.88 + 0.12 * balance) + (mom_comp - 50.0) * 0.20
 
-    has_stats = m.get("stats_source") == "robobet+sokkerpro"
-    if not has_stats:
-        # Sem estatísticas ao vivo confirmadas (xG, chutes, escanteios reais),
-        # o score baseado só no modelo recebe desconto de confiança: ainda pode
-        # aparecer como interessante, mas dificilmente como "muito forte".
-        lps *= 0.82
+    # Sem estatísticas de jogo (o RoboBet não expõe xG, chutes, escanteios
+    # reais em conta gratuita), o score baseado só no modelo recebe desconto
+    # de confiança: ainda pode aparecer como interessante, mas dificilmente
+    # como "muito forte".
+    lps *= 0.82
     lps = round(max(0.0, min(100.0, lps)), 1)
 
     goals_active = g_comp >= GOALS_MIN
@@ -320,7 +316,7 @@ def live_pressure_score(m: dict) -> dict:
     else:
         tier = "ignorar"
 
-    basis = "robobet+sokkerpro" if has_stats else "robobet"
+    basis = "robobet"
 
     return {
         "lps": lps,
@@ -364,7 +360,7 @@ def _confidence(m: dict, g_comp: float, c_comp: float) -> str:
 
     best = max(levels)
 
-    # Corroboração das estatísticas ao vivo do SokkerPRO eleva um nível.
+    # Corroboração de estatísticas ao vivo (quando disponíveis) eleva um nível.
     live_confirms = (
         (m.get("shots") or 0) >= 14
         or (m.get("dangerous_attacks") or 0) >= 90
