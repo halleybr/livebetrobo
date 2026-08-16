@@ -42,6 +42,11 @@ Este repositório é **público**, então os minutos do Actions usados são grat
 
 ## Como funciona
 
+> ✅ **Já validado em 15/08/2026:** o endpoint de dispatch respondeu **HTTP 204**
+> e o workflow disparado completou com sucesso, publicando dados novos no site
+> em ~1 minuto. O teste usou `POST` com `Authorization: Bearer <token>` e corpo
+> `{"ref":"main"}` — exatamente o que o cron-job.org fará.
+
 A cada 2 min o cron-job.org chama a API do GitHub, que dispara o workflow
 **Deploy GitHub Pages** (`workflow_dispatch`). O workflow gera os dados
 (`python build.py`), persiste o histórico green/red em `data/entries.json`
