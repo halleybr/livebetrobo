@@ -1,5 +1,26 @@
 [
   {
+    "id": 395100,
+    "league": "Finland Kakkonen Group C",
+    "home": "Narpes Kraft",
+    "away": "SJK Akatemia II",
+    "home_score_at_entry": 2,
+    "away_score_at_entry": 2,
+    "minute_at_entry": 82,
+    "market": "Over 0.5 gol",
+    "corner_market": null,
+    "entry_type": "goals",
+    "odd": 1.13,
+    "prob": 79.82,
+    "lps_at_entry": 71.9,
+    "confidence": "Alta",
+    "entered_at": "2026-08-16T17:11:30.923495+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 391930,
     "league": "Norway Division 1",
     "home": "Kongsvinger",
@@ -15,9 +36,9 @@
     "lps_at_entry": 73.2,
     "confidence": "Alta",
     "entered_at": "2026-08-16T16:31:03.516368+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
+    "status": "green",
+    "settled_at": "2026-08-16T17:11:30.923569+00:00",
+    "final_score": "3 x 2",
     "note": null
   },
   {
@@ -36,9 +57,9 @@
     "lps_at_entry": 71.0,
     "confidence": "Alta",
     "entered_at": "2026-08-16T15:33:00.974273+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
+    "status": "green",
+    "settled_at": "2026-08-16T17:11:30.923575+00:00",
+    "final_score": "2 x 2",
     "note": null
   },
   {
