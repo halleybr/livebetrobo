@@ -1,5 +1,26 @@
 [
   {
+    "id": 394576,
+    "league": "England Championship",
+    "home": "Cardiff",
+    "away": "Wrexham",
+    "home_score_at_entry": 0,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 43,
+    "market": null,
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "corners",
+    "odd": 1.22,
+    "prob": 82.2,
+    "lps_at_entry": 73.7,
+    "confidence": "Alta",
+    "entered_at": "2026-08-17T19:44:38.228246+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 392080,
     "league": "Chile Liga de Primera",
     "home": "Colo Colo",
