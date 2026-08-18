@@ -145,26 +145,5 @@
     "settled_at": "2026-08-17T21:03:38.404405+00:00",
     "final_score": "1 x 1",
     "note": "Mercado de escanteios sem dado final disponível (N/D)"
-  },
-  {
-    "id": 392080,
-    "league": "Chile Liga de Primera",
-    "home": "Colo Colo",
-    "away": "O'Higgins",
-    "home_score_at_entry": 0,
-    "away_score_at_entry": 0,
-    "minute_at_entry": 41,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over +7.5 escanteios",
-    "entry_type": "both",
-    "odd": null,
-    "prob": null,
-    "lps_at_entry": 71.0,
-    "confidence": "Alta",
-    "entered_at": "2026-08-16T22:14:14.616246+00:00",
-    "status": "green",
-    "settled_at": "2026-08-16T23:46:36.517128+00:00",
-    "final_score": "2 x 2",
-    "note": null
   }
 ]
