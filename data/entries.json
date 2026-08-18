@@ -166,26 +166,5 @@
     "settled_at": "2026-08-16T17:11:30.923569+00:00",
     "final_score": "3 x 2",
     "note": null
-  },
-  {
-    "id": 391937,
-    "league": "England Championship",
-    "home": "Burnley",
-    "away": "West Ham",
-    "home_score_at_entry": 0,
-    "away_score_at_entry": 1,
-    "minute_at_entry": 31,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over +7.5 escanteios",
-    "entry_type": "both",
-    "odd": null,
-    "prob": null,
-    "lps_at_entry": 71.0,
-    "confidence": "Alta",
-    "entered_at": "2026-08-16T15:33:00.974273+00:00",
-    "status": "green",
-    "settled_at": "2026-08-16T17:11:30.923575+00:00",
-    "final_score": "2 x 2",
-    "note": null
   }
 ]
