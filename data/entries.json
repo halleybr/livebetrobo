@@ -15,9 +15,9 @@
     "lps_at_entry": 71.3,
     "confidence": "Alta",
     "entered_at": "2026-08-18T19:36:59.795882+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
+    "status": "green",
+    "settled_at": "2026-08-18T19:59:31.015112+00:00",
+    "final_score": "3 x 2",
     "note": null
   },
   {
