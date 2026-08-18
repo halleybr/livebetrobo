@@ -145,26 +145,5 @@
     "settled_at": "2026-08-16T17:27:13.455283+00:00",
     "final_score": "2 x 2",
     "note": null
-  },
-  {
-    "id": 391930,
-    "league": "Norway Division 1",
-    "home": "Kongsvinger",
-    "away": "Haugesund",
-    "home_score_at_entry": 2,
-    "away_score_at_entry": 1,
-    "minute_at_entry": 68,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over de escanteios (total)",
-    "entry_type": "both",
-    "odd": 1.18,
-    "prob": 79.56,
-    "lps_at_entry": 73.2,
-    "confidence": "Alta",
-    "entered_at": "2026-08-16T16:31:03.516368+00:00",
-    "status": "green",
-    "settled_at": "2026-08-16T17:11:30.923569+00:00",
-    "final_score": "3 x 2",
-    "note": null
   }
 ]
