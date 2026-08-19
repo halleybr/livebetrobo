@@ -124,26 +124,5 @@
     "settled_at": null,
     "final_score": null,
     "note": null
-  },
-  {
-    "id": 394595,
-    "league": "Iceland 1 Deild",
-    "home": "Throttur Reykjavik",
-    "away": "Fylkir Reykjavik",
-    "home_score_at_entry": 2,
-    "away_score_at_entry": 1,
-    "minute_at_entry": 59,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over +8.5 escanteios",
-    "entry_type": "both",
-    "odd": null,
-    "prob": null,
-    "lps_at_entry": 70.6,
-    "confidence": "Alta",
-    "entered_at": "2026-08-17T20:31:59.808826+00:00",
-    "status": "green",
-    "settled_at": "2026-08-17T21:19:53.712271+00:00",
-    "final_score": "3 x 1",
-    "note": null
   }
 ]
