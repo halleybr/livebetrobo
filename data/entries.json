@@ -166,26 +166,5 @@
     "settled_at": "2026-08-17T20:56:22.528759+00:00",
     "final_score": "3 x 2",
     "note": null
-  },
-  {
-    "id": 394576,
-    "league": "England Championship",
-    "home": "Cardiff",
-    "away": "Wrexham",
-    "home_score_at_entry": 0,
-    "away_score_at_entry": 1,
-    "minute_at_entry": 43,
-    "market": null,
-    "corner_market": "Over +7.5 escanteios",
-    "entry_type": "corners",
-    "odd": 1.22,
-    "prob": 82.2,
-    "lps_at_entry": 73.7,
-    "confidence": "Alta",
-    "entered_at": "2026-08-17T19:44:38.228246+00:00",
-    "status": "n_d",
-    "settled_at": "2026-08-17T21:03:38.404405+00:00",
-    "final_score": "1 x 1",
-    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   }
 ]
