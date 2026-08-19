@@ -145,26 +145,5 @@
     "settled_at": "2026-08-17T21:19:53.712271+00:00",
     "final_score": "3 x 1",
     "note": null
-  },
-  {
-    "id": 395135,
-    "league": "Northern Ireland Reserve League",
-    "home": "Larne Reserves",
-    "away": "Crusaders Reserves",
-    "home_score_at_entry": 2,
-    "away_score_at_entry": 1,
-    "minute_at_entry": 45,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over de escanteios (total)",
-    "entry_type": "both",
-    "odd": 1.17,
-    "prob": 78.19,
-    "lps_at_entry": 70.7,
-    "confidence": "Alta",
-    "entered_at": "2026-08-17T20:00:21.531859+00:00",
-    "status": "green",
-    "settled_at": "2026-08-17T20:56:22.528759+00:00",
-    "final_score": "3 x 2",
-    "note": null
   }
 ]
