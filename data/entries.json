@@ -1,5 +1,26 @@
 [
   {
+    "id": 398937,
+    "league": "Estonia Esiliiga B",
+    "home": "JK Tallinna Kalev II",
+    "away": "Tallinna JK Legion",
+    "home_score_at_entry": 3,
+    "away_score_at_entry": 3,
+    "minute_at_entry": 92,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over de escanteios (total)",
+    "entry_type": "both",
+    "odd": 1.1,
+    "prob": 87.01,
+    "lps_at_entry": 74.8,
+    "confidence": "Alta",
+    "entered_at": "2026-08-21T17:47:52.784304+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 398821,
     "league": "Finland Ykkosliiga",
     "home": "FC Haka",
@@ -15,10 +36,10 @@
     "lps_at_entry": 70.7,
     "confidence": "Alta",
     "entered_at": "2026-08-21T16:01:11.952602+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
-    "note": null
+    "status": "n_d",
+    "settled_at": "2026-08-21T17:47:52.784340+00:00",
+    "final_score": "2 x 0",
+    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   },
   {
     "id": 397463,
