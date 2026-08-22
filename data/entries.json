@@ -397,26 +397,5 @@
     "settled_at": "2026-08-21T17:47:52.784340+00:00",
     "final_score": "2 x 0",
     "note": "Mercado de escanteios sem dado final disponível (N/D)"
-  },
-  {
-    "id": 397463,
-    "league": "Iceland 4 Deild",
-    "home": "IH Hafnarfjordur",
-    "away": "Ellidi",
-    "home_score_at_entry": 1,
-    "away_score_at_entry": 1,
-    "minute_at_entry": 26,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over de escanteios (total)",
-    "entry_type": "both",
-    "odd": 1.11,
-    "prob": 82.66,
-    "lps_at_entry": 70.5,
-    "confidence": "Alta",
-    "entered_at": "2026-08-20T20:42:34.347312+00:00",
-    "status": "green",
-    "settled_at": "2026-08-20T22:09:57.308844+00:00",
-    "final_score": "2 x 2",
-    "note": null
   }
 ]
