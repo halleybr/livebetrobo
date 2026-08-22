@@ -57,9 +57,9 @@
     "lps_at_entry": 70.1,
     "confidence": "Alta",
     "entered_at": "2026-08-22T15:01:39.677803+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
+    "status": "green",
+    "settled_at": "2026-08-22T16:28:22.572714+00:00",
+    "final_score": "1 x 1",
     "note": null
   },
   {
@@ -78,10 +78,10 @@
     "lps_at_entry": 76.3,
     "confidence": "Alta",
     "entered_at": "2026-08-22T15:01:39.677791+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
-    "note": null
+    "status": "n_d",
+    "settled_at": "2026-08-22T16:28:22.572725+00:00",
+    "final_score": "1 x 1",
+    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   },
   {
     "id": 400655,
