@@ -1,5 +1,26 @@
 [
   {
+    "id": 400601,
+    "league": "Sweden Allsvenskan",
+    "home": "Orgryte IS",
+    "away": "Halmstad",
+    "home_score_at_entry": 1,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 82,
+    "market": null,
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "corners",
+    "odd": 1.2,
+    "prob": 85.09,
+    "lps_at_entry": 70.4,
+    "confidence": "Alta",
+    "entered_at": "2026-08-22T14:39:43.355121+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 400636,
     "league": "Wales Championship South",
     "home": "Cardiff Draconians",
