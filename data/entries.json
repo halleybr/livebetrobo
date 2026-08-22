@@ -36,10 +36,10 @@
     "lps_at_entry": 71.3,
     "confidence": "Alta",
     "entered_at": "2026-08-22T17:34:02.285935+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
-    "note": null
+    "status": "n_d",
+    "settled_at": "2026-08-22T18:01:48.229780+00:00",
+    "final_score": "1 x 0",
+    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   },
   {
     "id": 400976,
@@ -57,10 +57,10 @@
     "lps_at_entry": 73.1,
     "confidence": "Alta",
     "entered_at": "2026-08-22T17:34:02.285928+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
-    "note": null
+    "status": "n_d",
+    "settled_at": "2026-08-22T18:01:48.229789+00:00",
+    "final_score": "2 x 0",
+    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   },
   {
     "id": 400680,
