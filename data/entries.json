@@ -1,5 +1,26 @@
 [
   {
+    "id": 400863,
+    "league": "Denmark Division 1",
+    "home": "AB Copenhagen",
+    "away": "Hvidovre IF",
+    "home_score_at_entry": 0,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 63,
+    "market": null,
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "corners",
+    "odd": 1.2,
+    "prob": 85.46,
+    "lps_at_entry": 71.1,
+    "confidence": "Alta",
+    "entered_at": "2026-08-22T17:49:05.385714+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 400858,
     "league": "Estonia Meistriliiga",
     "home": "Harju JK Laagri",
@@ -418,26 +439,5 @@
     "settled_at": "2026-08-20T20:29:38.069472+00:00",
     "final_score": "3 x 1",
     "note": null
-  },
-  {
-    "id": 397486,
-    "league": "Denmark Division 1",
-    "home": "Vendsyssel FF",
-    "away": "Hillerød",
-    "home_score_at_entry": 0,
-    "away_score_at_entry": 0,
-    "minute_at_entry": 38,
-    "market": null,
-    "corner_market": "Over +7.5 escanteios",
-    "entry_type": "corners",
-    "odd": 1.22,
-    "prob": 82.84,
-    "lps_at_entry": 73.6,
-    "confidence": "Alta",
-    "entered_at": "2026-08-20T17:37:18.078946+00:00",
-    "status": "n_d",
-    "settled_at": "2026-08-20T18:56:22.482538+00:00",
-    "final_score": "1 x 0",
-    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   }
 ]
