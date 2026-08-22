@@ -418,26 +418,5 @@
     "settled_at": "2026-08-20T22:09:57.308844+00:00",
     "final_score": "2 x 2",
     "note": null
-  },
-  {
-    "id": 398730,
-    "league": "Norway Interkretsserie U19",
-    "home": "KFUM U19",
-    "away": "Skeid U19",
-    "home_score_at_entry": 2,
-    "away_score_at_entry": 1,
-    "minute_at_entry": 86,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over de escanteios (total)",
-    "entry_type": "both",
-    "odd": 1.11,
-    "prob": 81.65,
-    "lps_at_entry": 72.1,
-    "confidence": "Alta",
-    "entered_at": "2026-08-20T19:59:16.253420+00:00",
-    "status": "green",
-    "settled_at": "2026-08-20T20:29:38.069472+00:00",
-    "final_score": "3 x 1",
-    "note": null
   }
 ]
