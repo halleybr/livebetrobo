@@ -1,5 +1,26 @@
 [
   {
+    "id": 406402,
+    "league": "Iceland 3 Deild",
+    "home": "KH Hlidarendi",
+    "away": "KV Vesturbaer",
+    "home_score_at_entry": 1,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 31,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over de escanteios (total)",
+    "entry_type": "both",
+    "odd": null,
+    "prob": null,
+    "lps_at_entry": 71.5,
+    "confidence": "Alta",
+    "entered_at": "2026-08-23T14:32:07.738865+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 403552,
     "league": "Finland Veikkausliiga",
     "home": "HJK Helsinki",
@@ -78,9 +99,9 @@
     "lps_at_entry": 73.6,
     "confidence": "Alta",
     "entered_at": "2026-08-23T12:51:01.076130+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
+    "status": "green",
+    "settled_at": "2026-08-23T14:32:07.738929+00:00",
+    "final_score": "1 x 0",
     "note": null
   },
   {
