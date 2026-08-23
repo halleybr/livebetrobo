@@ -57,9 +57,9 @@
     "lps_at_entry": 71.5,
     "confidence": "Alta",
     "entered_at": "2026-08-23T14:32:07.738865+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
+    "status": "green",
+    "settled_at": "2026-08-23T16:08:33.636338+00:00",
+    "final_score": "4 x 1",
     "note": null
   },
   {
@@ -565,26 +565,5 @@
     "settled_at": "2026-08-21T17:51:47.812817+00:00",
     "final_score": "3 x 3",
     "note": null
-  },
-  {
-    "id": 398821,
-    "league": "Finland Ykkosliiga",
-    "home": "FC Haka",
-    "away": "SJK II",
-    "home_score_at_entry": 1,
-    "away_score_at_entry": 0,
-    "minute_at_entry": 30,
-    "market": null,
-    "corner_market": "Over +7.5 escanteios",
-    "entry_type": "corners",
-    "odd": 1.17,
-    "prob": 86.51,
-    "lps_at_entry": 70.7,
-    "confidence": "Alta",
-    "entered_at": "2026-08-21T16:01:11.952602+00:00",
-    "status": "n_d",
-    "settled_at": "2026-08-21T17:47:52.784340+00:00",
-    "final_score": "2 x 0",
-    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   }
 ]
