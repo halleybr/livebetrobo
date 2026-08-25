@@ -124,26 +124,5 @@
     "settled_at": "2026-08-23T16:29:15.863133+00:00",
     "final_score": "2 x 0",
     "note": "Mercado de escanteios sem dado final disponível (N/D)"
-  },
-  {
-    "id": 406402,
-    "league": "Iceland 3 Deild",
-    "home": "KH Hlidarendi",
-    "away": "KV Vesturbaer",
-    "home_score_at_entry": 1,
-    "away_score_at_entry": 1,
-    "minute_at_entry": 31,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over de escanteios (total)",
-    "entry_type": "both",
-    "odd": null,
-    "prob": null,
-    "lps_at_entry": 71.5,
-    "confidence": "Alta",
-    "entered_at": "2026-08-23T14:32:07.738865+00:00",
-    "status": "green",
-    "settled_at": "2026-08-23T16:08:33.636338+00:00",
-    "final_score": "4 x 1",
-    "note": null
   }
 ]
