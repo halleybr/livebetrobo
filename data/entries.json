@@ -82,26 +82,5 @@
     "settled_at": "2026-08-23T18:13:07.263220+00:00",
     "final_score": "3 x 3",
     "note": null
-  },
-  {
-    "id": 403724,
-    "league": "Slovakia Super Liga",
-    "home": "AS Trencin",
-    "away": "FC Spartak Trnava",
-    "home_score_at_entry": 0,
-    "away_score_at_entry": 0,
-    "minute_at_entry": 29,
-    "market": null,
-    "corner_market": "Over +7.5 escanteios",
-    "entry_type": "corners",
-    "odd": 1.2,
-    "prob": 85.29,
-    "lps_at_entry": 70.0,
-    "confidence": "Alta",
-    "entered_at": "2026-08-23T15:30:51.103624+00:00",
-    "status": "n_d",
-    "settled_at": "2026-08-23T17:20:48.654471+00:00",
-    "final_score": "0 x 4",
-    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   }
 ]
