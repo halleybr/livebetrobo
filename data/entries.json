@@ -40,26 +40,5 @@
     "settled_at": "2026-08-25T20:55:43.620431+00:00",
     "final_score": "1 x 4",
     "note": null
-  },
-  {
-    "id": 405137,
-    "league": "Iceland Premier League",
-    "home": "Breidablik",
-    "away": "Fram Reykjavik",
-    "home_score_at_entry": 3,
-    "away_score_at_entry": 4,
-    "minute_at_entry": 81,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over +8.5 escanteios",
-    "entry_type": "both",
-    "odd": null,
-    "prob": null,
-    "lps_at_entry": 76.7,
-    "confidence": "Alta",
-    "entered_at": "2026-08-24T20:52:23.787497+00:00",
-    "status": "green",
-    "settled_at": "2026-08-24T21:12:52.352133+00:00",
-    "final_score": "3 x 4",
-    "note": null
   }
 ]
