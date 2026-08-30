@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": 412366,
+    "league": "Norway Division 3 Group 1",
+    "home": "IF Ready",
+    "away": "Gamle Oslo",
+    "home_score_at_entry": 2,
+    "away_score_at_entry": 3,
+    "minute_at_entry": 87,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over de escanteios (total)",
+    "entry_type": "both",
+    "odd": 1.13,
+    "prob": 79.24,
+    "lps_at_entry": 76.6,
+    "confidence": "Alta",
+    "entered_at": "2026-08-30T12:47:38.780593+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  }
+]
