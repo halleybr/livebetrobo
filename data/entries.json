@@ -1,5 +1,26 @@
 [
   {
+    "id": 419042,
+    "league": "Netherlands Cup",
+    "home": "ADO '20",
+    "away": "Excelsior Maassluis",
+    "home_score_at_entry": 1,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 90,
+    "market": null,
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "corners",
+    "odd": 1.29,
+    "prob": 78.45,
+    "lps_at_entry": 70.9,
+    "confidence": "Alta",
+    "entered_at": "2026-09-01T19:59:21.408134+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 415868,
     "league": "Brazil Serie A",
     "home": "Remo",
