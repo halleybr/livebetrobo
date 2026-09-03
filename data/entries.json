@@ -19,26 +19,5 @@
     "settled_at": "2026-09-01T21:24:41.820303+00:00",
     "final_score": "1 x 1",
     "note": "Mercado de escanteios sem dado final disponível (N/D)"
-  },
-  {
-    "id": 415868,
-    "league": "Brazil Serie A",
-    "home": "Remo",
-    "away": "Coritiba",
-    "home_score_at_entry": 0,
-    "away_score_at_entry": 0,
-    "minute_at_entry": 47,
-    "market": null,
-    "corner_market": "Over +7.5 escanteios",
-    "entry_type": "corners",
-    "odd": 1.2,
-    "prob": 85.09,
-    "lps_at_entry": 70.6,
-    "confidence": "Alta",
-    "entered_at": "2026-08-31T23:47:51.667717+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
-    "note": null
   }
 ]
