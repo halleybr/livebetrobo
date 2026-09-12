@@ -1,5 +1,26 @@
 [
   {
+    "id": 434842,
+    "league": "England Premier League",
+    "home": "Bournemouth",
+    "away": "Brentford",
+    "home_score_at_entry": 2,
+    "away_score_at_entry": 2,
+    "minute_at_entry": 77,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "both",
+    "odd": null,
+    "prob": null,
+    "lps_at_entry": 72.3,
+    "confidence": "Alta",
+    "entered_at": "2026-09-12T15:40:26.688720+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 434444,
     "league": "Germany Bundesliga Women",
     "home": "RB Leipzig (W)",
