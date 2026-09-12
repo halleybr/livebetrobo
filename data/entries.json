@@ -1,5 +1,26 @@
 [
   {
+    "id": 434828,
+    "league": "Scotland League Cup",
+    "home": "Kilmarnock",
+    "away": "Aberdeen",
+    "home_score_at_entry": 1,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 90,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "both",
+    "odd": null,
+    "prob": null,
+    "lps_at_entry": 72.0,
+    "confidence": "Alta",
+    "entered_at": "2026-09-12T18:44:09.267182+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 434842,
     "league": "England Premier League",
     "home": "Bournemouth",
@@ -61,26 +82,5 @@
     "settled_at": "2026-09-11T21:11:39.048296+00:00",
     "final_score": "0 x 1",
     "note": "Mercado de escanteios sem dado final disponível (N/D)"
-  },
-  {
-    "id": 432505,
-    "league": "Finland Kolmonen",
-    "home": "PPJ/Lauttasaari",
-    "away": "VJS Vantaa II",
-    "home_score_at_entry": 2,
-    "away_score_at_entry": 1,
-    "minute_at_entry": 68,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over de escanteios (total)",
-    "entry_type": "both",
-    "odd": 1.17,
-    "prob": 77.91,
-    "lps_at_entry": 71.1,
-    "confidence": "Alta",
-    "entered_at": "2026-09-10T18:23:02.562507+00:00",
-    "status": "green",
-    "settled_at": "2026-09-10T21:01:56.733504+00:00",
-    "final_score": "3 x 1",
-    "note": null
   }
 ]
