@@ -40,26 +40,5 @@
     "settled_at": "2026-09-12T16:33:18.669102+00:00",
     "final_score": "2 x 2",
     "note": null
-  },
-  {
-    "id": 434444,
-    "league": "Germany Bundesliga Women",
-    "home": "RB Leipzig (W)",
-    "away": "Nurnberg (W)",
-    "home_score_at_entry": 1,
-    "away_score_at_entry": 0,
-    "minute_at_entry": 33,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over +7.5 escanteios",
-    "entry_type": "both",
-    "odd": null,
-    "prob": null,
-    "lps_at_entry": 75.2,
-    "confidence": "Alta",
-    "entered_at": "2026-09-12T10:35:53.842132+00:00",
-    "status": "green",
-    "settled_at": "2026-09-12T12:25:41.313392+00:00",
-    "final_score": "2 x 1",
-    "note": null
   }
 ]
