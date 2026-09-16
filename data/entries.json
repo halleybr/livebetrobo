@@ -15,10 +15,10 @@
     "lps_at_entry": 71.0,
     "confidence": "Alta",
     "entered_at": "2026-09-16T19:44:17.502696+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
-    "note": null
+    "status": "n_d",
+    "settled_at": "2026-09-16T22:19:22.557819+00:00",
+    "final_score": "2 x 0",
+    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   },
   {
     "id": 442990,
