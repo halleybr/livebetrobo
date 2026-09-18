@@ -19,26 +19,5 @@
     "settled_at": "2026-09-18T18:21:56.931960+00:00",
     "final_score": "3 x 2",
     "note": "Mercado de escanteios sem dado final disponível (N/D)"
-  },
-  {
-    "id": 442971,
-    "league": "UEFA Europa League",
-    "home": "Bayer Leverkusen",
-    "away": "NK Celje",
-    "home_score_at_entry": 1,
-    "away_score_at_entry": 0,
-    "minute_at_entry": 42,
-    "market": null,
-    "corner_market": "Over +7.5 escanteios",
-    "entry_type": "corners",
-    "odd": 1.22,
-    "prob": 83.94,
-    "lps_at_entry": 71.0,
-    "confidence": "Alta",
-    "entered_at": "2026-09-16T19:44:17.502696+00:00",
-    "status": "n_d",
-    "settled_at": "2026-09-16T22:19:22.557819+00:00",
-    "final_score": "2 x 0",
-    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   }
 ]
