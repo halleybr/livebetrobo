@@ -1,5 +1,26 @@
 [
   {
+    "id": 451029,
+    "league": "England EFL Trophy",
+    "home": "Rochdale",
+    "away": "Liverpool U21",
+    "home_score_at_entry": 1,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 51,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "both",
+    "odd": null,
+    "prob": null,
+    "lps_at_entry": 73.4,
+    "confidence": "Alta",
+    "entered_at": "2026-09-22T19:11:42.240390+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 447702,
     "league": "Brazil Serie B",
     "home": "Londrina",
