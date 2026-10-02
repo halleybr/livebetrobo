@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "id": 460938,
+    "league": "Germany Bundesliga Women",
+    "home": "Bayer Leverkusen (W)",
+    "away": "Werder Bremen (W)",
+    "home_score_at_entry": 2,
+    "away_score_at_entry": 2,
+    "minute_at_entry": 65,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "both",
+    "odd": null,
+    "prob": null,
+    "lps_at_entry": 73.2,
+    "confidence": "Alta",
+    "entered_at": "2026-10-02T18:02:07.221773+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
+    "id": 461651,
+    "league": "Finland Kolmonen",
+    "home": "Valtti",
+    "away": "VJS Vantaa II",
+    "home_score_at_entry": 2,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 45,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over de escanteios (total)",
+    "entry_type": "both",
+    "odd": 1.14,
+    "prob": 78.8,
+    "lps_at_entry": 78.2,
+    "confidence": "Alta",
+    "entered_at": "2026-10-02T18:02:07.221760+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  }
+]
