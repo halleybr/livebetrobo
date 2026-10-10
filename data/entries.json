@@ -1,5 +1,26 @@
 [
   {
+    "id": 471844,
+    "league": "Mexico Liga TDP",
+    "home": "Ecatepec FC",
+    "away": "CH Fútbol Club",
+    "home_score_at_entry": 0,
+    "away_score_at_entry": 2,
+    "minute_at_entry": 30,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over de escanteios (total)",
+    "entry_type": "both",
+    "odd": 1.18,
+    "prob": 76.14,
+    "lps_at_entry": 71.2,
+    "confidence": "Alta",
+    "entered_at": "2026-10-10T22:32:50.739503+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 470639,
     "league": "USA MLS",
     "home": "Chicago Fire",
@@ -15,9 +36,9 @@
     "lps_at_entry": 71.2,
     "confidence": "Alta",
     "entered_at": "2026-10-10T19:14:15.237641+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
+    "status": "green",
+    "settled_at": "2026-10-10T22:32:50.739721+00:00",
+    "final_score": "2 x 1",
     "note": null
   }
 ]
