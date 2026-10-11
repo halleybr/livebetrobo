@@ -15,9 +15,9 @@
     "lps_at_entry": 72.2,
     "confidence": "Alta",
     "entered_at": "2026-10-11T14:19:49.340871+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
+    "status": "green",
+    "settled_at": "2026-10-11T18:40:24.282571+00:00",
+    "final_score": "2 x 1",
     "note": null
   },
   {
@@ -36,9 +36,9 @@
     "lps_at_entry": 74.7,
     "confidence": "Alta",
     "entered_at": "2026-10-11T13:59:25.677403+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
+    "status": "green",
+    "settled_at": "2026-10-11T18:40:24.282583+00:00",
+    "final_score": "1 x 2",
     "note": null
   },
   {
