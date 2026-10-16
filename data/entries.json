@@ -1,5 +1,26 @@
 [
   {
+    "id": 481124,
+    "league": "Germany Bundesliga Women",
+    "home": "Freiburg (W)",
+    "away": "RB Leipzig (W)",
+    "home_score_at_entry": 0,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 71,
+    "market": null,
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "corners",
+    "odd": 1.25,
+    "prob": 79.18,
+    "lps_at_entry": 78.5,
+    "confidence": "Alta",
+    "entered_at": "2026-10-16T17:58:54.912311+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 480223,
     "league": "Norway Interkretsserie U19",
     "home": "Ready U19",
