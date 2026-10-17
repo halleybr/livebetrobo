@@ -1,5 +1,26 @@
 [
   {
+    "id": 483076,
+    "league": "Poland IV Liga",
+    "home": "Termalica BB Nieciecza II",
+    "away": "Cracovia Krakow II",
+    "home_score_at_entry": 1,
+    "away_score_at_entry": 2,
+    "minute_at_entry": 85,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over de escanteios (total)",
+    "entry_type": "both",
+    "odd": 1.17,
+    "prob": 77.05,
+    "lps_at_entry": 78.4,
+    "confidence": "Alta",
+    "entered_at": "2026-10-17T10:44:52.984826+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 481124,
     "league": "Germany Bundesliga Women",
     "home": "Freiburg (W)",
