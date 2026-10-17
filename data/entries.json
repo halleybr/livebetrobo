@@ -145,26 +145,5 @@
     "settled_at": "2026-10-16T20:35:31.729364+00:00",
     "final_score": "0 x 3",
     "note": "Mercado de escanteios sem dado final disponível (N/D)"
-  },
-  {
-    "id": 480223,
-    "league": "Norway Interkretsserie U19",
-    "home": "Ready U19",
-    "away": "Haslum U19",
-    "home_score_at_entry": 1,
-    "away_score_at_entry": 1,
-    "minute_at_entry": 52,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over de escanteios (total)",
-    "entry_type": "both",
-    "odd": 1.14,
-    "prob": 81.78,
-    "lps_at_entry": 72.2,
-    "confidence": "Alta",
-    "entered_at": "2026-10-15T19:24:06.331853+00:00",
-    "status": "green",
-    "settled_at": "2026-10-15T22:08:35.576217+00:00",
-    "final_score": "1 x 2",
-    "note": null
   }
 ]
