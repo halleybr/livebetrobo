@@ -1,5 +1,26 @@
 [
   {
+    "id": 483759,
+    "league": "Netherlands Eredivisie",
+    "home": "PEC Zwolle",
+    "away": "Go Ahead Eagles",
+    "home_score_at_entry": 1,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 57,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "both",
+    "odd": null,
+    "prob": null,
+    "lps_at_entry": 75.7,
+    "confidence": "Alta",
+    "entered_at": "2026-10-18T11:35:42.673600+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 482491,
     "league": "Brazil Serie B",
     "home": "America MG",
