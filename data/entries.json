@@ -19,26 +19,5 @@
     "settled_at": "2026-10-28T23:19:45.521634+00:00",
     "final_score": "2 x 2",
     "note": null
-  },
-  {
-    "id": 506641,
-    "league": "Romania Cup",
-    "home": "ACS UTA Batrana Doamna",
-    "away": "FC Botosani",
-    "home_score_at_entry": 1,
-    "away_score_at_entry": 2,
-    "minute_at_entry": 61,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over +7.5 escanteios",
-    "entry_type": "both",
-    "odd": null,
-    "prob": null,
-    "lps_at_entry": 74.6,
-    "confidence": "Alta",
-    "entered_at": "2026-10-27T18:19:14.056930+00:00",
-    "status": "green",
-    "settled_at": "2026-10-27T22:20:08.679935+00:00",
-    "final_score": "2 x 2",
-    "note": null
   }
 ]
