@@ -15,30 +15,9 @@
     "lps_at_entry": 71.2,
     "confidence": "Alta",
     "entered_at": "2026-10-30T19:28:44.870824+00:00",
-    "status": "ativa",
-    "settled_at": null,
-    "final_score": null,
-    "note": null
-  },
-  {
-    "id": 508225,
-    "league": "Netherlands Cup",
-    "home": "Sparta Rotterdam",
-    "away": "Fortuna Sittard",
-    "home_score_at_entry": 2,
-    "away_score_at_entry": 2,
-    "minute_at_entry": 90,
-    "market": "Over 0.5 gol",
-    "corner_market": "Over de escanteios (total)",
-    "entry_type": "both",
-    "odd": 1.29,
-    "prob": 75.24,
-    "lps_at_entry": 73.6,
-    "confidence": "Alta",
-    "entered_at": "2026-10-28T19:39:37.000491+00:00",
-    "status": "green",
-    "settled_at": "2026-10-28T23:19:45.521634+00:00",
-    "final_score": "2 x 2",
-    "note": null
+    "status": "n_d",
+    "settled_at": "2026-10-30T21:27:45.542013+00:00",
+    "final_score": "1 x 1",
+    "note": "Mercado de escanteios sem dado final disponível (N/D)"
   }
 ]
