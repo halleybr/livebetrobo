@@ -1,5 +1,26 @@
 [
   {
+    "id": 510303,
+    "league": "Sweden 1.div Södra",
+    "home": "BK Olympic",
+    "away": "Hässleholms IF",
+    "home_score_at_entry": 0,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 72,
+    "market": null,
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "corners",
+    "odd": 1.22,
+    "prob": 78.83,
+    "lps_at_entry": 71.2,
+    "confidence": "Alta",
+    "entered_at": "2026-10-30T19:28:44.870824+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 508225,
     "league": "Netherlands Cup",
     "home": "Sparta Rotterdam",
