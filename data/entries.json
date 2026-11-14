@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "id": 539247,
+    "league": "Scotland League Two",
+    "home": "Stirling",
+    "away": "Elgin",
+    "home_score_at_entry": 1,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 78,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "both",
+    "odd": null,
+    "prob": null,
+    "lps_at_entry": 73.2,
+    "confidence": "Alta",
+    "entered_at": "2026-11-14T16:35:38.603404+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
+    "id": 539179,
+    "league": "England National League",
+    "home": "AFC Hornchurch",
+    "away": "Tamworth",
+    "home_score_at_entry": 2,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 76,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "both",
+    "odd": null,
+    "prob": null,
+    "lps_at_entry": 74.3,
+    "confidence": "Alta",
+    "entered_at": "2026-11-14T16:35:38.603392+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  }
+]
