@@ -1,5 +1,26 @@
 [
   {
+    "id": 547816,
+    "league": "Slovakia Super Liga",
+    "home": "AS Trencin",
+    "away": "FK Zeleziarne Podbrezova",
+    "home_score_at_entry": 1,
+    "away_score_at_entry": 1,
+    "minute_at_entry": 45,
+    "market": "Over 0.5 gol",
+    "corner_market": "Over +7.5 escanteios",
+    "entry_type": "both",
+    "odd": null,
+    "prob": null,
+    "lps_at_entry": 70.9,
+    "confidence": "Alta",
+    "entered_at": "2026-11-21T15:16:09.027731+00:00",
+    "status": "ativa",
+    "settled_at": null,
+    "final_score": null,
+    "note": null
+  },
+  {
     "id": 550658,
     "league": "Mexico Liga TDP",
     "home": "Atletico Mexicano F.E.",
